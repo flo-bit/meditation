@@ -1,0 +1,51 @@
+{
+  "name": "garden/en",
+  "text": "Close your eyes and take a deep breath in. <PAUSE: 4> Exhale slowly, releasing all the tension from your body. <PAUSE: 5> Picture yourself standing at the entrance of a beautiful, tranquil garden. With each step you take, feel the soft earth beneath your feet. <PAUSE: 6>\n\nAs you walk further in, notice the vibrant colors of the flowers around you. See how each bloom is unique, radiating its own beauty. <PAUSE: 5> Take a moment to bend down and gently touch one of the petals, feeling its soft, delicate texture. <PAUSE: 7> Notice the different shapes and sizes, and the way they sway ever so slightly with the breeze. <PAUSE: 6>\n\nThe air is filled with the scent of fresh blooms, a blend of roses, lilacs, and jasmine. Breathe in deeply and let the fragrance fill your lungs, bringing you a sense of calm and peace. <PAUSE: 8> Walking further, you hear the gentle sound of a stream nearby. The water flows softly, creating a soothing melody in the background. <PAUSE: 6>\n\nFollow the sound until you reach the stream. Stand by its edge and watch as the clear water glides over smooth stones. <PAUSE: 6> You continue to walk along the stream until you find a peaceful spot to sit. <PAUSE: 7> Lower yourself gently onto the grass and feel the earth's cool embrace supporting you. <PAUSE: 6>\n\nClose your eyes again and take another deep breath in. <PAUSE: 4> As you exhale, imagine all your worries and stresses flowing out of you and being carried away by the gentle stream. <PAUSE: 8> Absorb the serenity around you. The flowers, the fresh scent, the calming sound of the stream, they all come together to create a sanctuary of peace. <PAUSE: 9>\n\nFeel the warmth of the sun on your skin, bringing a sense of comfort and lightness. <PAUSE: 7> Allow yourself to be fully present in this moment, embracing the tranquility that surrounds you. <PAUSE: 9> Take a few more deep breaths, and with every exhale, feel more and more at peace. <PAUSE: 10>\n\nWhen you’re ready, slowly bring your awareness back to the present moment. Take your time to gently wiggle your fingers and toes. <PAUSE: 6> When you feel ready, open your eyes slowly, carrying the peace of this tranquil garden with you. <PAUSE: 10>",
+  "parts": [
+    "Close your eyes and take a deep breath in.",
+    "Exhale slowly, releasing all the tension from your body.",
+    "Picture yourself standing at the entrance of a beautiful, tranquil garden. With each step you take, feel the soft earth beneath your feet.",
+    "As you walk further in, notice the vibrant colors of the flowers around you. See how each bloom is unique, radiating its own beauty.",
+    "Take a moment to bend down and gently touch one of the petals, feeling its soft, delicate texture.",
+    "Notice the different shapes and sizes, and the way they sway ever so slightly with the breeze.",
+    "The air is filled with the scent of fresh blooms, a blend of roses, lilacs, and jasmine. Breathe in deeply and let the fragrance fill your lungs, bringing you a sense of calm and peace.",
+    "Walking further, you hear the gentle sound of a stream nearby. The water flows softly, creating a soothing melody in the background.",
+    "Follow the sound until you reach the stream. Stand by its edge and watch as the clear water glides over smooth stones.",
+    "You continue to walk along the stream until you find a peaceful spot to sit.",
+    "Lower yourself gently onto the grass and feel the earth's cool embrace supporting you.",
+    "Close your eyes again and take another deep breath in.",
+    "As you exhale, imagine all your worries and stresses flowing out of you and being carried away by the gentle stream.",
+    "Absorb the serenity around you. The flowers, the fresh scent, the calming sound of the stream, they all come together to create a sanctuary of peace.",
+    "Feel the warmth of the sun on your skin, bringing a sense of comfort and lightness.",
+    "Allow yourself to be fully present in this moment, embracing the tranquility that surrounds you.",
+    "Take a few more deep breaths, and with every exhale, feel more and more at peace.",
+    "When you’re ready, slowly bring your awareness back to the present moment. Take your time to gently wiggle your fingers and toes.",
+    "When you feel ready, open your eyes slowly, carrying the peace of this tranquil garden with you."
+  ],
+  "pauses": [
+    5,
+    4,
+    5,
+    6,
+    5,
+    7,
+    6,
+    8,
+    6,
+    6,
+    7,
+    6,
+    4,
+    8,
+    9,
+    7,
+    9,
+    10,
+    6,
+    10
+  ],
+  "length": 5,
+  "voices": [
+    "Nicole"
+  ]
+}

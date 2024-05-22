@@ -1,0 +1,33 @@
+{
+  "name": "forest/en",
+  "text": "Close your eyes and take a deep breath in, feeling the air fill your lungs, and then slowly let it out. Let your body relax with each breath you take. Now, imagine yourself standing at the entrance to a serene forest.\n\n<PAUSE: 5>\n\nPicture yourself taking the first steps into this peaceful forest. Feel the gentle crunch of leaves and twigs beneath your feet with each step. Notice the cool, damp earth that cushions your every movement. \n\n<PAUSE: 10>\n\nAs you walk further into the forest, focus on the sounds around you. Hear the soft rustling of leaves as a gentle breeze flows through the trees. Listen closely, and you’ll hear the melodic chirping of birds, creating a symphony of natural sounds.\n\n<PAUSE: 15>\n\nTake a moment to breathe in deeply through your nose. Smell the fresh, crisp air filled with the essence of pine, wildflowers, and earth. Let this scent fill your senses and cleanse your mind.\n\n<PAUSE: 20>\n\nNow, continue walking gently through the forest, feeling the ground beneath your feet with each deliberate step. Allow yourself to be fully present in this moment, noticing the play of light and shadow as the sun filters through the canopy above.\n\n<PAUSE: 15>\n\nFind a spot in the forest where you can pause. Perhaps it’s a soft bed of moss or a sun-dappled clearing. Sit down or stand still, feeling grounded and connected to the earth beneath you.\n\n<PAUSE: 10>\n\nClose your eyes in this tranquil spot and feel the connection to nature deepen. Sense the pulse of the earth underneath you, and imagine roots extending from your body into the ground, anchoring you firmly and securely.\n\n<PAUSE: 20>\n\nTake a few moments to draw in the energy of the forest, feeling it fill you up, rejuvenating and refreshing every part of your being. Feel the peace, the calm, and the beauty of nature infusing your mind and soul.\n\n<PAUSE: 30>\n\nAllow yourself a few more breaths in this serene state. When you’re ready, gently bring your awareness back to the present moment, carrying with you the tranquility and connection you've felt during this journey.\n\n<PAUSE: 10>\n\nSlowly open your eyes, bringing a sense of calm and peace into your day.",
+  "parts": [
+    "Close your eyes and take a deep breath in, feeling the air fill your lungs, and then slowly let it out. Let your body relax with each breath you take. Now, imagine yourself standing at the entrance to a serene forest.",
+    "Picture yourself taking the first steps into this peaceful forest. Feel the gentle crunch of leaves and twigs beneath your feet with each step. Notice the cool, damp earth that cushions your every movement.",
+    "As you walk further into the forest, focus on the sounds around you. Hear the soft rustling of leaves as a gentle breeze flows through the trees. Listen closely, and you’ll hear the melodic chirping of birds, creating a symphony of natural sounds.",
+    "Take a moment to breathe in deeply through your nose. Smell the fresh, crisp air filled with the essence of pine, wildflowers, and earth. Let this scent fill your senses and cleanse your mind.",
+    "Now, continue walking gently through the forest, feeling the ground beneath your feet with each deliberate step. Allow yourself to be fully present in this moment, noticing the play of light and shadow as the sun filters through the canopy above.",
+    "Find a spot in the forest where you can pause. Perhaps it’s a soft bed of moss or a sun-dappled clearing. Sit down or stand still, feeling grounded and connected to the earth beneath you.",
+    "Close your eyes in this tranquil spot and feel the connection to nature deepen. Sense the pulse of the earth underneath you, and imagine roots extending from your body into the ground, anchoring you firmly and securely.",
+    "Take a few moments to draw in the energy of the forest, feeling it fill you up, rejuvenating and refreshing every part of your being. Feel the peace, the calm, and the beauty of nature infusing your mind and soul.",
+    "Allow yourself a few more breaths in this serene state. When you’re ready, gently bring your awareness back to the present moment, carrying with you the tranquility and connection you've felt during this journey.",
+    "Slowly open your eyes, bringing a sense of calm and peace into your day."
+  ],
+  "pauses": [
+    5,
+    5,
+    10,
+    15,
+    20,
+    15,
+    10,
+    20,
+    30,
+    10,
+    5
+  ],
+  "length": 5,
+  "voices": [
+    "Nicole"
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "name": "breathing/en",
+  "text": "Close your eyes gently and take a deep breath in through your nose, filling your lungs completely. Hold it for a moment. Now, release that breath slowly and fully through your mouth. Feel the air as it flows out.\n\n<PAUSE: 5>\n\nStart to settle into the natural rhythm of your breath. Notice the gentle rise and fall of your chest and your abdomen with each inhale and exhale. Let any tension in your body begin to melt away as you continue to breathe naturally.\n\n<PAUSE: 10>\n\nImagine with each inhale, you are drawing in calm and peace. With each exhale, you are letting go of stress and tension. Feel this wave of relaxation move through you, gently loosening any tightness you might feel.\n\n<PAUSE: 5>\n\nShift your focus to where you feel your breath most clearly. It could be the cool air entering your nostrils, the rise and fall of your chest, or the gentle expansion and contraction of your belly. Zero in on this sensation.\n\n<PAUSE: 10>\n\nIf your mind wanders, gently guide your attention back to your breath. There's no need to judge the thoughts that come up. Simply notice them and let them pass, like clouds drifting by in the sky. Then return to observing your breathing.\n\n<PAUSE: 10>\n\nNow begin to deepen your breath slightly. Inhale for a count of four: one, two, three, four. Hold that breath gently for a count of two. Exhale slowly for a count of six: one, two, three, four, five, six. Let's repeat this a few more times.\n\n<PAUSE: 20>\n\nNotice how each deep breath brings you more relaxation and clarity. Feel the rhythm and the peace within this practice. Even as you focus on your breath, let it flow naturally. There's no need to force or rush it.\n\n<PAUSE: 10>\n\nSlowly bring your attention back to the room around you, while still keeping your breath steady and calm. Start to feel the surface you're sitting or lying on. Listen to the sounds around you, but stay connected to your breath.\n\n<PAUSE: 15>\n\nWhen you are ready, gently flutter your eyelids open and take a moment to notice how you feel. Take one final deep breath in... and out.\n\n<PAUSE: 5>",
+  "parts": [
+    "Close your eyes gently and take a deep breath in through your nose, filling your lungs completely. Hold it for a moment. Now, release that breath slowly and fully through your mouth. Feel the air as it flows out.",
+    "Start to settle into the natural rhythm of your breath. Notice the gentle rise and fall of your chest and your abdomen with each inhale and exhale. Let any tension in your body begin to melt away as you continue to breathe naturally.",
+    "Imagine with each inhale, you are drawing in calm and peace. With each exhale, you are letting go of stress and tension. Feel this wave of relaxation move through you, gently loosening any tightness you might feel.",
+    "Shift your focus to where you feel your breath most clearly. It could be the cool air entering your nostrils, the rise and fall of your chest, or the gentle expansion and contraction of your belly. Zero in on this sensation.",
+    "If your mind wanders, gently guide your attention back to your breath. There's no need to judge the thoughts that come up. Simply notice them and let them pass, like clouds drifting by in the sky. Then return to observing your breathing.",
+    "Now begin to deepen your breath slightly. Inhale for a count of four: one, two, three, four. Hold that breath gently for a count of two. Exhale slowly for a count of six: one, two, three, four, five, six. Let's repeat this a few more times.",
+    "Notice how each deep breath brings you more relaxation and clarity. Feel the rhythm and the peace within this practice. Even as you focus on your breath, let it flow naturally. There's no need to force or rush it.",
+    "Slowly bring your attention back to the room around you, while still keeping your breath steady and calm. Start to feel the surface you're sitting or lying on. Listen to the sounds around you, but stay connected to your breath.",
+    "When you are ready, gently flutter your eyelids open and take a moment to notice how you feel. Take one final deep breath in... and out."
+  ],
+  "pauses": [
+    5,
+    5,
+    10,
+    5,
+    10,
+    10,
+    20,
+    10,
+    15,
+    5
+  ],
+  "length": 5,
+  "voices": [
+    "Nicole"
+  ]
+}

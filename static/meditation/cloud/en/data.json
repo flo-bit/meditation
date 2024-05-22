@@ -1,0 +1,37 @@
+{
+  "name": "cloud/en",
+  "text": "Take a deep breath in, filling your lungs completely. As you exhale, close your eyes and imagine yourself in a serene, peaceful place. <PAUSE: 3>\n\nNow, gently picture a soft, fluffy cloud forming beneath you. Feel its gentle embrace as it cradles your body, supporting you effortlessly. <PAUSE: 5>\n\nWith each breath, notice how your body feels lighter. Feel the weightlessness surrounding you, as if the cloud is lifting you away from any concerns or worries. <PAUSE: 5>\n\nVisualize the soft, white cloud slowly rising, carrying you higher into the sky. Look around and see the vast, open blue sky stretching out endlessly. <PAUSE: 5>\n\nFeel the gentle, cool breeze as it whispers past you, caressing your skin. Notice how the cloud feels beneath you—so soft, so comforting, holding you securely and safely. <PAUSE: 5>\n\nFeel the sun’s warm rays gently kissing your face, filling you with a soothing warmth. Breathe deeply, letting this warmth spread throughout your body, melting away any tension or stress. <PAUSE: 10>\n\nObserve any worries or thoughts that come into your mind. Acknowledge them, and then let them float away into the sky, dissolving into the peaceful blue expanse above. <PAUSE: 10>\n\nFeel the boundless sky around you. Experience the freedom and calm it brings. Let yourself sink deeper into the cloud, feeling completely supported and at ease. <PAUSE: 5>\n\nAppreciate this moment of tranquility and stillness. For now, there is nothing you need to do, nowhere you need to be. Just you, the soft cloud, and the open sky. <PAUSE: 10>\n\nAs you continue to float, take a few moments to soak in the serenity and peace surrounding you. Allow yourself to just be—free, light, and unburdened. <PAUSE: 15>\n\nSlowly, begin to bring your awareness back to your physical surroundings. Feel the surface you are lying on, the air around you. <PAUSE: 5>\n\nTake a deep, grounding breath. As you exhale, gently open your eyes, carrying this sense of calm and weightlessness with you into the rest of your day. <PAUSE: 5>",
+  "parts": [
+    "Take a deep breath in, filling your lungs completely. As you exhale, close your eyes and imagine yourself in a serene, peaceful place.",
+    "Now, gently picture a soft, fluffy cloud forming beneath you. Feel its gentle embrace as it cradles your body, supporting you effortlessly.",
+    "With each breath, notice how your body feels lighter. Feel the weightlessness surrounding you, as if the cloud is lifting you away from any concerns or worries.",
+    "Visualize the soft, white cloud slowly rising, carrying you higher into the sky. Look around and see the vast, open blue sky stretching out endlessly.",
+    "Feel the gentle, cool breeze as it whispers past you, caressing your skin. Notice how the cloud feels beneath you—so soft, so comforting, holding you securely and safely.",
+    "Feel the sun’s warm rays gently kissing your face, filling you with a soothing warmth. Breathe deeply, letting this warmth spread throughout your body, melting away any tension or stress.",
+    "Observe any worries or thoughts that come into your mind. Acknowledge them, and then let them float away into the sky, dissolving into the peaceful blue expanse above.",
+    "Feel the boundless sky around you. Experience the freedom and calm it brings. Let yourself sink deeper into the cloud, feeling completely supported and at ease.",
+    "Appreciate this moment of tranquility and stillness. For now, there is nothing you need to do, nowhere you need to be. Just you, the soft cloud, and the open sky.",
+    "As you continue to float, take a few moments to soak in the serenity and peace surrounding you. Allow yourself to just be—free, light, and unburdened.",
+    "Slowly, begin to bring your awareness back to your physical surroundings. Feel the surface you are lying on, the air around you.",
+    "Take a deep, grounding breath. As you exhale, gently open your eyes, carrying this sense of calm and weightlessness with you into the rest of your day."
+  ],
+  "pauses": [
+    5,
+    3,
+    5,
+    5,
+    5,
+    5,
+    10,
+    10,
+    5,
+    10,
+    15,
+    5,
+    5
+  ],
+  "length": 5,
+  "voices": [
+    "Nicole"
+  ]
+}
