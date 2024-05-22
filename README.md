@@ -2,7 +2,7 @@
 
 AI generated meditation guide for a 5 minute meditation session.
 
-[Try it here]()
+[Try it here](https://flo-bit.github.io/meditation/)
 
 ## Features
 
