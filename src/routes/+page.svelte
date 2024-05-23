@@ -12,6 +12,12 @@
 
 	let audioParts: Howl[] = [];
 
+	let jsonParts: {
+		characters: string[];
+		character_start_times_seconds: number[];
+		character_end_times_seconds: number[];
+	}[] = [];
+
 	type Meditation = {
 		name: string;
 		text: string;
@@ -34,13 +40,14 @@
 	let song = songs[0];
 	let currentSong = song;
 
+	let showSubtitles: 'on' | 'off' = 'on';
+
 	let meditationNames = [
 		'river',
 		'breathing',
 		'gummybear',
 		'cosmic',
 		'forest',
-		'mountain',
 		'ocean',
 		'gratitude',
 		'bodyscan',
@@ -65,7 +72,7 @@
 		}
 
 		music = new Howl({
-			src: [`${main_url}music/${song}.mp3`],
+			src: [`${main_url}music/${song}_small.mp3`],
 			loop: true,
 			volume: volume,
 			onload: () => {
@@ -93,7 +100,7 @@
 		}
 
 		soundEffect = new Howl({
-			src: [`${main_url}sounds/${sound}.mp3`],
+			src: [`${main_url}sounds/${sound}_small.mp3`],
 			loop: true,
 			volume: volume,
 			onload: () => {
@@ -106,7 +113,20 @@
 
 	let main_url: string = '';
 
+	let backgrounds = ['flowfield', 'mandala', 'noise', 'rectangles', 'spiral', 'triangles'];
+
+	let background = backgrounds[0];
+
+	let mouseMoved = true;
+
+	let mouseMovedTimeout: NodeJS.Timeout | null = null;
+
+	let loaded: boolean[] = [];
+
+	let allLoaded = false;
+
 	onMount(async () => {
+		background = backgrounds[Math.floor(Math.random() * backgrounds.length)];
 		main_url = window.location.href;
 
 		// get rid of the last part of the url (everything after the last /)
@@ -134,6 +154,7 @@
 		let voice = meditation.voices[0].toLowerCase();
 
 		audioPause = meditation.pauses[0];
+		audioPause = 0;
 
 		// load /name/voice/0.mp3, /name/voice/1.mp3, ...
 		for (let i = 0; i < meditation.parts.length; i++) {
@@ -143,29 +164,60 @@
 					volume: 1,
 					onend: () => {
 						partFinished();
+					},
+					onload: () => {
+						loaded[i + 2] = true;
+						checkLoadingStatus();
 					}
 				})
 			);
+
+			let response = await fetch(`${main_url}meditation/${name}/en/${voice}/part_${i}.json`);
+			jsonParts.push(await response.json());
 		}
 
+		console.log('loaded meditation', jsonParts);
+
 		music = new Howl({
-			src: [`${main_url}music/${song}.mp3`],
+			src: [`${main_url}music/${song}_small.mp3`],
 			loop: true,
-			volume: 0.5
+			volume: 0.5,
+			onload: () => {
+				loaded[0] = true;
+				checkLoadingStatus();
+			}
 		});
 
 		soundEffect = new Howl({
-			src: [`${main_url}sounds/${sound}.mp3`],
+			src: [`${main_url}sounds/${sound}_small.mp3`],
 			loop: true,
-			volume: 0.3
+			volume: 0.3,
+			onload: () => {
+				loaded[1] = true;
+				checkLoadingStatus();
+			}
 		});
 	});
+
+	function checkLoadingStatus() {
+		for (let i = 0; i < loaded.length; i++) {
+			if (!loaded[i]) {
+				return;
+			}
+		}
+
+		allLoaded = true;
+	}
 
 	function partFinished() {
 		audioPause = meditation?.pauses[currentPart + 1] ?? 0;
 	}
 
 	function playPause() {
+		if (!allLoaded) {
+			return;
+		}
+
 		playing = !playing;
 
 		if (!started) {
@@ -207,7 +259,7 @@
 
 		time += 0.1;
 
-		if (audioPause > 0) {
+		if (audioPause >= 0) {
 			audioPause -= 0.1;
 
 			if (audioPause <= 0) {
@@ -223,13 +275,32 @@
 		}
 	}
 
-	let backgrounds = ['flowfield', 'mandala', 'noise', 'rectangles', 'spiral', 'triangles'];
+	function getCharacters() {
+		console.log('current part', currentPart);
+		if (currentPart < 0 || !meditation) {
+			return '';
+		}
 
-	let background = backgrounds[0];
+		// get current time of current part
+		let currentTime = audioParts[currentPart].seek();
 
-	let mouseMoved = true;
+		if (audioPause > meditation.pauses[currentPart + 1] - 2) {
+			currentTime = audioParts[currentPart].duration();
+		}
 
-	let mouseMovedTimeout: NodeJS.Timeout | null = null;
+		console.log('current time', currentTime);
+		// display all characters that are before current time
+		for (let i = 0; i < jsonParts[currentPart].character_start_times_seconds.length; i++) {
+			if (
+				jsonParts[currentPart].character_start_times_seconds[i] <= currentTime &&
+				jsonParts[currentPart].character_end_times_seconds[i] >= currentTime
+			) {
+				return jsonParts[currentPart].characters.slice(0, i).join('');
+			}
+		}
+
+		return jsonParts[currentPart].characters.join('');
+	}
 </script>
 
 <svelte:body
@@ -271,44 +342,66 @@
 	{/key}
 {/if}
 
-<button on:click={playPause} class="h-screen w-screen group cursor-pointer outline-none">
-	<div class="flex items-center justify-center h-screen z-10">
-		<div
-			class="p-4 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl hover:bg-white/10 transition-all duration-300 ease-in-out text-white hover:text-white/80 {playing &&
-			!mouseMoved
-				? 'opacity-0 hover:opacity-100'
-				: ''}"
-		>
-			{#if playing}
-				<svg
-					xmlns="http://www.w3.org/2000/svg"
-					viewBox="0 0 24 24"
-					fill="currentColor"
-					class="w-24 h-24"
-				>
-					<path
-						fill-rule="evenodd"
-						d="M6.75 5.25a.75.75 0 0 1 .75-.75H9a.75.75 0 0 1 .75.75v13.5a.75.75 0 0 1-.75.75H7.5a.75.75 0 0 1-.75-.75V5.25Zm7.5 0A.75.75 0 0 1 15 4.5h1.5a.75.75 0 0 1 .75.75v13.5a.75.75 0 0 1-.75.75H15a.75.75 0 0 1-.75-.75V5.25Z"
-						clip-rule="evenodd"
-					/>
-				</svg>
-			{:else}
-				<svg
-					xmlns="http://www.w3.org/2000/svg"
-					viewBox="0 0 24 24"
-					fill="currentColor"
-					class="w-24 h-24"
-				>
-					<path
-						fill-rule="evenodd"
-						d="M4.5 5.653c0-1.427 1.529-2.33 2.779-1.643l11.54 6.347c1.295.712 1.295 2.573 0 3.286L7.28 19.99c-1.25.687-2.779-.217-2.779-1.643V5.653Z"
-						clip-rule="evenodd"
-					/>
-				</svg>
-			{/if}
+{#if allLoaded}
+	<button on:click={playPause} class="h-screen w-screen group cursor-pointer outline-none">
+		<div class="flex items-center justify-center h-screen z-10">
+			<div
+				class="p-4 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl hover:bg-white/10 transition-all duration-300 ease-in-out text-white hover:text-white/80 {playing &&
+				!mouseMoved
+					? 'opacity-0 hover:opacity-100'
+					: ''}"
+			>
+				{#if playing}
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						viewBox="0 0 24 24"
+						fill="currentColor"
+						class="w-24 h-24"
+					>
+						<path
+							fill-rule="evenodd"
+							d="M6.75 5.25a.75.75 0 0 1 .75-.75H9a.75.75 0 0 1 .75.75v13.5a.75.75 0 0 1-.75.75H7.5a.75.75 0 0 1-.75-.75V5.25Zm7.5 0A.75.75 0 0 1 15 4.5h1.5a.75.75 0 0 1 .75.75v13.5a.75.75 0 0 1-.75.75H15a.75.75 0 0 1-.75-.75V5.25Z"
+							clip-rule="evenodd"
+						/>
+					</svg>
+				{:else}
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						viewBox="0 0 24 24"
+						fill="currentColor"
+						class="w-24 h-24"
+					>
+						<path
+							fill-rule="evenodd"
+							d="M4.5 5.653c0-1.427 1.529-2.33 2.779-1.643l11.54 6.347c1.295.712 1.295 2.573 0 3.286L7.28 19.99c-1.25.687-2.779-.217-2.779-1.643V5.653Z"
+							clip-rule="evenodd"
+						/>
+					</svg>
+				{/if}
+			</div>
 		</div>
+	</button>
+{:else}
+<div
+	class="flex h-screen w-screen  bg-black/50 z-10 items-center justify-center backdrop-blur-sm text-white"
+>
+	<div class="flex gap-x-2 justify-center items-center mb-4">
+		<div class="h-8 w-8 bg-white/80 backdrop-blur-md border border-white rounded-full animate-bounce [animation-delay:-0.3s]" />
+		<div class="h-8 w-8 bg-white/80 backdrop-blur-md border border-white rounded-full animate-bounce [animation-delay:-0.15s]" />
+		<div class="h-8 w-8 bg-white/80 backdrop-blur-md border border-white rounded-full animate-bounce" />
 	</div>
-</button>
+</div>
+{/if}
+
+{#if showSubtitles === 'on'}
+	{#key time}
+		<div class="absolute bottom-4 left-0 right px-4 w-full">
+			<div class="text-white text-md font-thin transition-all duration-300 mx-auto max-w-xl">
+				{getCharacters()}
+			</div>
+		</div>
+	{/key}
+{/if}
 
 <Dialog.Root>
 	<Dialog.Trigger
@@ -330,14 +423,14 @@
 			<Dialog.Description>
 				<div class="text-sm text-white">
 					<div class="text-lg font-semibold text-left">Background</div>
-					<div class="flex items-start mt-2 flex-wrap">
+					<div class="flex items-start mt-2 flex-wrap gap-1">
 						{#each backgrounds as bg}
 							<Toggle value={bg} bind:selected={background} />
 						{/each}
 					</div>
 
 					<div class="text-lg font-semibold mt-6 text-left">Music</div>
-					<div class="flex items-start mt-2">
+					<div class="flex items-start mt-2 gap-1">
 						{#each songs as s}
 							<Toggle value={s} bind:selected={song} />
 						{/each}
@@ -370,7 +463,7 @@
 					</div>
 
 					<div class="text-lg font-semibold mt-6 text-left">Sounds</div>
-					<div class="flex items-start mt-2">
+					<div class="flex items-start mt-2 gap-1">
 						{#each sounds as s}
 							<Toggle value={s} bind:selected={sound} />
 						{/each}
@@ -400,6 +493,12 @@
 								}
 							}}
 						/>
+					</div>
+					<div class="text-lg font-semibold mt-6 text-left">Subtitles</div>
+					<div class="flex items-start mt-2 gap-1">
+						{#each ['on', 'off'] as s}
+							<Toggle value={s} bind:selected={showSubtitles} />
+						{/each}
 					</div>
 				</div>
 			</Dialog.Description>
