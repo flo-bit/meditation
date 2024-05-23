@@ -106,7 +106,16 @@
 
 	let main_url: string = '';
 
+	let backgrounds = ['flowfield', 'mandala', 'noise', 'rectangles', 'spiral', 'triangles'];
+
+	let background = backgrounds[0];
+
+	let mouseMoved = true;
+
+	let mouseMovedTimeout: NodeJS.Timeout | null = null;
+
 	onMount(async () => {
+		background = backgrounds[Math.floor(Math.random() * backgrounds.length)];
 		main_url = window.location.href;
 
 		// get rid of the last part of the url (everything after the last /)
@@ -222,14 +231,6 @@
 			}
 		}
 	}
-
-	let backgrounds = ['flowfield', 'mandala', 'noise', 'rectangles', 'spiral', 'triangles'];
-
-	let background = backgrounds[0];
-
-	let mouseMoved = true;
-
-	let mouseMovedTimeout: NodeJS.Timeout | null = null;
 </script>
 
 <svelte:body
